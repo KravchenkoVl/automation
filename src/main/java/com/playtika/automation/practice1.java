@@ -16,7 +16,7 @@ public class practice1 {
     }
 
     private static float calculatePrice(float candiesKgPrice, float cookiesKgPrice) {
-        float priceCalc = (0.3f * candiesKgPrice) + (0.4f * cookiesKgPrice);
-        return priceCalc;
+        float priceM = (0.3f * candiesKgPrice) + (0.4f * cookiesKgPrice);
+        return priceM;
     }
 }
