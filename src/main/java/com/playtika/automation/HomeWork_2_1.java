@@ -19,13 +19,7 @@ public class HomeWork_2_1 {
 
     // расчет колечества строк с пробелами
     public static int calculateM(int n) {
-        if (n == 9) {
-            return 3;
-        } else if (n == 6) {
-            return 2;
-        } else {
-            return 1;
-        }
+        return n/3;
     }
 
     // вывод полной строки
