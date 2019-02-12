@@ -16,7 +16,7 @@ public class practice1 {
 
 
         float finalPrice = calculatePrice(candiesPrice, cookiesPrice);
-        System.out.printf("Цена за 300 грамм конфет и 400 грамм  печенья = %s", finalPrice);
+        System.out.printf("Ценаt за 300 грамм конфет и 400 грамм  печенья = %s", finalPrice);
     }
 
     private static float calculatePrice(float candiesKgPrice, float cookiesKgPrice) {
