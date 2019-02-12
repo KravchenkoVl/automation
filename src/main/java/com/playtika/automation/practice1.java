@@ -10,7 +10,11 @@ public class practice1 {
         System.out.printf("Введите стоимость 1 кг печенья: ");
         float cookiesPrice = console.nextFloat();
 
+        //  решение без дополнительного метода
         // float price = (0.3f * candiesPrice) + (0.4f * cookiesPrice);
+        // System.out.printf("Цена за 300 грамм конфет и 400 грамм  печенья = %s", price);
+
+
         float finalPrice = calculatePrice(candiesPrice, cookiesPrice);
         System.out.printf("Цена за 300 грамм конфет и 400 грамм  печенья = %s", finalPrice);
     }
