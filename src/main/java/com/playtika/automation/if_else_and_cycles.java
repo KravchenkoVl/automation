@@ -1,7 +1,11 @@
 package com.playtika.automation;
 
-public class ifElse {
+public class if_else_and_cycles {
     public static void main(String[] args) {
+
+    }
+
+    public static void ifElse() {
         int x = 10;
         if (x == 10) {
             System.out.println("Hello 1");
@@ -9,4 +13,9 @@ public class ifElse {
             System.out.println("Hello 2");
         }
     }
+
+
+
+
+
 }
