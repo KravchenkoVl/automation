@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class HomeWork_2_1 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        System.out.printf("Введите n: ");
+        System.out.print("Введите n: ");
         int n = console.nextInt();
         int m = calculateM(n);  // расчет высоты сетки (m)
         writeFullString(n);  // первая строка
@@ -26,7 +26,7 @@ public class HomeWork_2_1 {
     public static void writeFullString(int n) {
         int count = 5 + (4 * n);
         for (int i = 1; i <= count; i++) {
-            System.out.printf("*");
+            System.out.print("*");
         }
         System.out.println();
     }
@@ -34,9 +34,9 @@ public class HomeWork_2_1 {
     // вывод строки с пробелами
     public static void writeStringWithSpace(int n) {
         for (int i = 1; i <= 4; i++) {
-            System.out.printf("*");
+            System.out.print("*");
             for (int j = 1; j <= n; j++){
-                System.out.printf(" ");
+                System.out.print(" ");
             }
         }
         System.out.println("*");
