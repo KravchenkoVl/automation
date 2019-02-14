@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class HomeWork_2_1 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        System.out.print("Введите n: ");
-        int n = console.nextInt();
+        int n = 0;
+        while (n != 3 && n != 6 && n != 9) {
+            System.out.print("Введите N, доступные значения: 3, 6, 9.  Ваш выбор: ");
+            n = console.nextInt();
+        }
         int m = calculateM(n);  // расчет высоты сетки (m)
         writeFullString(n);  // первая строка
         for (int i = 1; i <= 4; i++){
