@@ -1,19 +1,16 @@
 package com.playtika.automation;
 
-import java.lang.*;
+import java.util.Scanner;
 
 public class HomeWork_3_1 {
     public static void main(String[] args) {
-        StringBuilder str1 = new StringBuilder("dadadadadad");
-        String strHelp = str1.toString();
-        StringBuilder str2 = new StringBuilder(str1.reverse());
-        System.out.println("строка 1     " + str1);
-        System.out.println("строка Help  " + strHelp);
-        System.out.println("строка 2     " + str2);
-        if (strHelp.equals(str2.toString())) {
-            System.out.println("Да");
+        Scanner console = new Scanner(System.in);
+        System.out.print("Введите слово/фразу: ");
+        StringBuilder strCheck = new StringBuilder(console.next());
+        if (strCheck.toString().equalsIgnoreCase(strCheck.reverse().toString())) {
+            System.out.println("Палиндром");
         } else {
-            System.out.println("Нет");
+            System.out.println("Не палиндром");
         }
     }
 }
