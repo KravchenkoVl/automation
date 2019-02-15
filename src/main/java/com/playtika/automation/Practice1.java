@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.Scanner;
 
-public class practice1 {
+public class Practice1 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.printf("Введите стоимость 1 кг конфет: ");

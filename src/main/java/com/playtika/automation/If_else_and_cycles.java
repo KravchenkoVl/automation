@@ -1,6 +1,6 @@
 package com.playtika.automation;
 
-public class if_else_and_cycles {
+public class If_else_and_cycles {
     public static void main(String[] args) {
 
     }
