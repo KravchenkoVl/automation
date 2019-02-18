@@ -1,6 +1,6 @@
 package com.playtika.automation;
 
-public class HomeWork_1_2 {
+public class HomeWork_1_2_Decomposition {
     public static void main(String[] args) {
         decomposition(65457);
     }

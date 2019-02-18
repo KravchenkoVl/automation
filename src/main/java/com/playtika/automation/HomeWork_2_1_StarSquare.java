@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.Scanner;
 
-public class HomeWork_2_1 {
+public class HomeWork_2_1_StarSquare {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         int n = 0;

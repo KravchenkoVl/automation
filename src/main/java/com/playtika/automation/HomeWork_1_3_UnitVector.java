@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.Scanner;
 
-public class HomeWork_1_3 {
+public class HomeWork_1_3_UnitVector {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.printf("Введите координату X: ");

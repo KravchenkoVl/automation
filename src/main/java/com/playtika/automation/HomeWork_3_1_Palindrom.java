@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.Scanner;
 
-public class HomeWork_3_1 {
+public class HomeWork_3_1_Palindrom {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.print("Введите слово/фразу: ");

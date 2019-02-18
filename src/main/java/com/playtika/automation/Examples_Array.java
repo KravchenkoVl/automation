@@ -3,7 +3,7 @@ package com.playtika.automation;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class ArrayExample {
+public class Examples_Array {
     public static void main(String[] args) {
         int[] array = new int[100];
         for (int i = 0; i < array.length; i++) {

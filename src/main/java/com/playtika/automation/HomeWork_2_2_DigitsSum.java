@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.Scanner;
 
-public class HomeWork_2_2 {
+public class HomeWork_2_2_DigitsSum {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.print("Введите число: ");
