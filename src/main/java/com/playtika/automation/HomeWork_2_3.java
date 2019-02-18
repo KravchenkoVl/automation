@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class HomeWork_2_3 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        System.out.print("Введите количество программистов в компании: ");
-        int i = console.nextInt();
+        int i = 0;
+        while (i < 1) {
+            System.out.print("Введите количество программистов в компании: ");
+            i = console.nextInt();
+        }
         System.out.printf("Для найма %d программистов было проведено %d сбеседований", i, sum(i));
     }
 
