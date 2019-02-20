@@ -1,6 +1,5 @@
 package com.playtika.automation;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeWork_3_2_ReversedWords {
