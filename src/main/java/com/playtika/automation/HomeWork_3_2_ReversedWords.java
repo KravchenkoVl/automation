@@ -6,13 +6,13 @@ public class HomeWork_3_2_ReversedWords {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите фразу: ");
-        String[] words = console.nextLine().split(" ");
-        StringBuilder test = new StringBuilder("");
-        for (int i = 0; i < words.length; i++) {
-            StringBuilder rev = new StringBuilder(words[i]);
-            test.append(" ");
-            test.append(rev.reverse());
+        String[] firstString = console.nextLine().split(" ");
+        StringBuilder secondString = new StringBuilder("");
+        for (int i = 0; i < firstString.length; i++) {
+            StringBuilder word = new StringBuilder(firstString[i]);
+            secondString.append(" ");
+            secondString.append(word.reverse());
         }
-        System.out.print(test.toString().trim());
+        System.out.print(secondString.toString().trim());
     }
 }
