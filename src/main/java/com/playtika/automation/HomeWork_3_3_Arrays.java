@@ -18,7 +18,7 @@ public class HomeWork_3_3_Arrays {
 
     public static void randomFill(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i] = ThreadLocalRandom.current().nextInt();
+            array[i] = ThreadLocalRandom.current().nextInt(0,1000000000);
         }
     }
 
