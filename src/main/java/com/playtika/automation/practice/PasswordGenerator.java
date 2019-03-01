@@ -2,7 +2,7 @@ package com.playtika.automation;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Practice2_PasswordGenerator {
+public class PasswordGenerator {
     public static final String SPEC_ALPHABET = "!@#$%^&*";
     public static final String NUMBER_ALPHABET = "0123456789";
     public static final String SYMB_ALPHABET = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

@@ -1,6 +1,6 @@
-package com.playtika.automation.Examples;
+package com.playtika.automation.examples;
 
-public class Examples_OOP {
+public class OOP {
     public static void main(String[] args) {
         String str1 = new String("Hello");
         String str2 = new String("Print");
