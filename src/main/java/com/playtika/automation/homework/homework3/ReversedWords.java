@@ -1,4 +1,4 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework3;
 
 import java.util.Scanner;
 

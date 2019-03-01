@@ -1,6 +1,6 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework1;
 
-public class HomeWork_1_1_Calculate {
+public class Calculate {
     public static void main(String[] args) {
         calculate1();
         calculate2();

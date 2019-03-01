@@ -1,9 +1,9 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework3;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class HomeWork_3_3_Arrays {
+public class Arrays {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         int n = 0;

@@ -1,8 +1,8 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework1;
 
 import java.util.Scanner;
 
-public class HomeWork_1_3_UnitVector {
+public class UnitVector {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.printf("Введите координату X: ");

@@ -1,8 +1,8 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework2;
 
 import java.util.Scanner;
 
-public class HomeWork_2_1_StarSquare {
+public class StarSquare {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         int n = 0;

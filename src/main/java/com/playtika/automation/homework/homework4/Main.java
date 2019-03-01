@@ -1,4 +1,4 @@
-package com.playtika.automation.homeWork;
+package com.playtika.automation.homework.homework4;
 
 public class Main {
     public static void main(String[] args) {

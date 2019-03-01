@@ -1,4 +1,4 @@
-package com.playtika.automation.HomeWork;
+package com.playtika.automation.homework.homework4;
 
 public class Point {
     private float x;

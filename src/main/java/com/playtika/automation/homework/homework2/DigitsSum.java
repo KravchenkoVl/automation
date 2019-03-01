@@ -1,8 +1,8 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework2;
 
 import java.util.Scanner;
 
-public class HomeWork_2_2_DigitsSum {
+public class DigitsSum {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.print("Введите число: ");

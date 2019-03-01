@@ -1,4 +1,4 @@
-package com.playtika.automation;
+package com.playtika.automation.practice;
 
 import java.util.concurrent.ThreadLocalRandom;
 

@@ -1,4 +1,4 @@
-package com.playtika.automation;
+package com.playtika.automation.homework.homework1;
 
 public class Decomposition {
     public static void main(String[] args) {

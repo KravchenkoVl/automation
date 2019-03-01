@@ -1,4 +1,4 @@
-package com.playtika.automation;
+package com.playtika.automation.examples;
 
 public class HelloWorld {
     public static void main(String[] args){
