@@ -2,12 +2,38 @@ package com.playtika.automation.homework.homework4;
 
 public class Main {
     public static void main(String[] args) {
-        Point p1 = new Point();
-        Point p2 = new Point(10);
-        Point p3 = new Point(55, 10);
-        Triangle check = new Triangle(p1, p2, p3);
-        System.out.println(check.perimeter());
-        System.out.println(check.square());
-        System.out.println(check.type());
+        int i = 0;
+        int type1 = 0;
+        int type2 = 0;
+        int type3 = 0;
+        int type4 = 0;
+        Triangle[] triangles = new Triangle[100000];
+        while (i < triangles.length) {
+            triangles[i] = new Triangle();
+            switch (triangles[i].type()) {
+                case 1:
+                    type1++;
+                    break; // Равносторонний
+                case 2:
+                    type2++;
+                    break; // Прямоугольный
+                case 3:
+                    type3++;
+                    break; // Равнобедренный
+                case 4:
+                    type4++;
+                    break; // Произвольный
+            }
+            i++;
+//            System.out.println("Индекс: " +  triangles[i]);
+//            System.out.println(triangles[i].toString());
+//            System.out.println("P: " + triangles[i].perimeter());
+//            System.out.println("S: " + triangles[i].square());
+//            System.out.println("Тип: " + triangles[i].type());
+        }
+        System.out.println("Количество равносторонних треугольников: " + type1);
+        System.out.println("Количество прямоугольных  треугольников: " + type2);
+        System.out.println("Количество равнобедренных треугольников: " + type3);
+        System.out.println("Количество произвольных   треугольников: " + type4);
     }
 }

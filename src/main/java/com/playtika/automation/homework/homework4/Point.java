@@ -1,18 +1,22 @@
 package com.playtika.automation.homework.homework4;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Point {
     private float x;
     private float y;
 
     public Point() {
+        x = (float) ThreadLocalRandom.current().nextInt(-50, 50);
+        y = (float) ThreadLocalRandom.current().nextInt(-50, 50);
     }
 
-    public Point(int x, int y) {
+    public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point(int xy) {
+    public Point(float xy) {
         this(xy, xy);
     }
 
@@ -21,5 +25,41 @@ public class Point {
         float resY = this.y - toPoint.y;
         float res = (float) Math.sqrt((resX * resX) + (resY * resY));
         return res;
+    }
+
+    public float getX(){
+        return x;
+    }
+
+    public float getY(){
+        return y;
+    }
+
+    public boolean equals(Object otherPoint) {
+        if (otherPoint == null) {
+            return false;
+        }
+        if (!(otherPoint instanceof Point)) {
+            return false;
+        }
+        Point point = (Point) otherPoint;
+        if (x != point.x) {
+            return false;
+        }
+        return y == point.y;
+    }
+
+    public boolean equalsX(Point otherPoint) {
+        if (x == otherPoint.x) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean equalsY(Point otherPoint) {
+        if (y == otherPoint.y) {
+            return true;
+        }
+        return false;
     }
 }
