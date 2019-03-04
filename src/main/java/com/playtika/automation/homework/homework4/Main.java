@@ -1,5 +1,7 @@
 package com.playtika.automation.homework.homework4;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         int i = 0;
@@ -7,7 +9,19 @@ public class Main {
         int type2 = 0;
         int type3 = 0;
         int type4 = 0;
-        Triangle[] triangles = new Triangle[100000];
+        boolean flag = false;
+        Scanner console = new Scanner(System.in);
+        System.out.printf("Выберите класс треугольника для поиска:\n" +
+                "1. Равносторонний\n" +
+                "2. Прямоугольный\n" +
+                "3. Равнобедренный\n" +
+                "4. Произвольный\n");
+        byte n = console.nextByte();
+        while (n < 1 || n > 4) {
+            System.out.print("Выберите из предложенных вариантов: ");
+            n = console.nextByte();
+        }
+        Triangle[] triangles = new Triangle[1_000_000];
         while (i < triangles.length) {
             triangles[i] = new Triangle();
             switch (triangles[i].type()) {
@@ -24,12 +38,17 @@ public class Main {
                     type4++;
                     break; // Произвольный
             }
+            if (triangles[i].type() == n) {
+                while (flag == false) {
+                    System.out.println("Индекс: " + i);
+                    triangles[i].getInfo();
+                    flag = true;
+                }
+            }
             i++;
-//            System.out.println("Индекс: " +  triangles[i]);
-//            System.out.println(triangles[i].toString());
-//            System.out.println("P: " + triangles[i].perimeter());
-//            System.out.println("S: " + triangles[i].square());
-//            System.out.println("Тип: " + triangles[i].type());
+        }
+        if (flag == false) {
+            System.out.println("Нет ни одного треугольника с указанным типом");
         }
         System.out.println("Количество равносторонних треугольников: " + type1);
         System.out.println("Количество прямоугольных  треугольников: " + type2);

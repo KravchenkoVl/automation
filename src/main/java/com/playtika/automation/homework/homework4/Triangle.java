@@ -1,6 +1,7 @@
 package com.playtika.automation.homework.homework4;
 
 public class Triangle {
+    public static final float EPSILON = 0.001f;
 
     private Point A;
     private Point B;
@@ -15,7 +16,7 @@ public class Triangle {
             B = new Point();
             C = new Point();
         } while (A.equals(B) || B.equals(C) || C.equals(A) ||
-                 A.equalsX(B) && B.equalsX(C) || A.equalsY(B) && B.equalsY(C));
+                 A.equalsX(B) && A.equalsX(C) || A.equalsY(B) && A.equalsY(C));
         a = A.distance(B);
         b = B.distance(C);
         c = C.distance(A);
@@ -42,13 +43,13 @@ public class Triangle {
     }
 
     public byte type() {
-        if (a == b && b == c) {
+        if (equalsSideAB() && equalsSideBC()) {
             return 1; //"Равносторонний";
-        } else if (a * a == (b * b) + (c * c) ||
-                b * b == (a * a) + (c * c) ||
-                c * c == (a * a) + (b * b)) {
+        } else if (Math.abs((a * a) - ((b * b) + (c * c))) < EPSILON ||
+                Math.abs((b * b) - ((c * c) + (a * a))) < EPSILON ||
+                Math.abs((c * c) - ((a * a) + (b * b))) < EPSILON) {
             return 2; //"Прямоугольный";
-        } else if (a == b || a == c || b == c) {
+        } else if (equalsSideAB() || equalsSideCA() || equalsSideBC()) {
             return 3; //"Равнобедренный";
         } else {
             return 4; //"Произвольный";
@@ -72,6 +73,47 @@ public class Triangle {
         check.append(C.getY());
         check.append(")]");
         return check.toString();
+    }
+
+    public void getInfo(){
+        System.out.println(this.toString());
+        System.out.println("P: " + this.perimeter());
+        System.out.println("S: " + this.square());
+        switch (this.type()) {
+            case 1:
+                System.out.println("Тип: Равносторонний");
+                break;
+            case 2:
+                System.out.println("Тип: Прямоугольный");
+                break;
+            case 3:
+                System.out.println("Тип: Равнобедренный");
+                break;
+            case 4:
+                System.out.println("Тип: Произвольный");
+                break;
+        }
+    }
+
+    public boolean equalsSideAB() {
+        if (Math.abs(a - b) < EPSILON) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean equalsSideBC() {
+        if (Math.abs(b - c) < EPSILON) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean equalsSideCA() {
+        if (Math.abs(c - a) < EPSILON) {
+            return true;
+        }
+        return false;
     }
 }
 

@@ -1,5 +1,7 @@
 package com.playtika.automation.homework.homework4;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Point {
@@ -7,8 +9,8 @@ public class Point {
     private float y;
 
     public Point() {
-        x = (float) ThreadLocalRandom.current().nextInt(-50, 50);
-        y = (float) ThreadLocalRandom.current().nextInt(-50, 50);
+        x = new BigDecimal(Math.random(),new MathContext(3)).floatValue();
+        y = new BigDecimal(Math.random(),new MathContext(3)).floatValue();
     }
 
     public Point(float x, float y) {
