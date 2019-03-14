@@ -2,14 +2,17 @@ package com.playtika.automation.homework.homework4;
 
 import java.util.Scanner;
 
+import static com.playtika.automation.homework.homework4.TrianglesFactory.getRandomTriange;
+
 public class Main {
     public static void main(String[] args) {
+        Triangle[] triangles = new Triangle[100_000];
         int i = 0;
-        int type1 = 0;
-        int type2 = 0;
-        int type3 = 0;
-        int type4 = 0;
-        boolean flag = false;
+        while (i < triangles.length) {
+            triangles[i] = getRandomTriange();
+            i++;
+        }
+
         Scanner console = new Scanner(System.in);
         System.out.printf("Выберите класс треугольника для поиска:\n" +
                 "1. Равносторонний\n" +
@@ -21,38 +24,42 @@ public class Main {
             System.out.print("Выберите из предложенных вариантов: ");
             n = console.nextByte();
         }
-        Triangle[] triangles = new Triangle[1_000_000];
-        while (i < triangles.length) {
-            triangles[i] = new Triangle();
-            switch (triangles[i].type()) {
+
+        int type1 = 0;
+        int type2 = 0;
+        int type3 = 0;
+        int type4 = 0;
+        boolean flag = false;
+        for (int j = 0; j < triangles.length; j++) {
+            switch (triangles[j].type()) {
                 case 1:
-                    type1++;
-                    break; // Равносторонний
+                    type1++;   // Равносторонний
+                    break;
                 case 2:
-                    type2++;
-                    break; // Прямоугольный
+                    type2++;   // Прямоугольный
+                    break;
                 case 3:
-                    type3++;
-                    break; // Равнобедренный
+                    type3++;   // Равнобедренный
+                    break;
                 case 4:
-                    type4++;
-                    break; // Произвольный
+                    type4++;   // Произвольный
+                    break;
             }
-            if (triangles[i].type() == n) {
-                while (flag == false) {
-                    System.out.println("Индекс: " + i);
-                    triangles[i].getInfo();
+            if (triangles[j].type() == n) {
+                if (flag == false) {
+                    System.out.println("Индекс: " + j);
+                    triangles[j].getInfo();
                     flag = true;
                 }
             }
-            i++;
+            
         }
         if (flag == false) {
             System.out.println("Нет ни одного треугольника с указанным типом");
         }
-        System.out.println("Количество равносторонних треугольников: " + type1);
-        System.out.println("Количество прямоугольных  треугольников: " + type2);
-        System.out.println("Количество равнобедренных треугольников: " + type3);
-        System.out.println("Количество произвольных   треугольников: " + type4);
+            System.out.println("Количество равносторонних треугольников: " + type1);
+            System.out.println("Количество прямоугольных  треугольников: " + type2);
+            System.out.println("Количество равнобедренных треугольников: " + type3);
+            System.out.println("Количество произвольных   треугольников: " + type4);
     }
 }

@@ -1,55 +1,55 @@
 package com.playtika.automation.homework.homework4;
 
 public class Triangle {
-    public static final float EPSILON = 0.001f;
-
-    private Point A;
-    private Point B;
-    private Point C;
-    private float a;
-    private float b;
-    private float c;
+    public static final float EPSILON = 0.01f;
+    private Point a;
+    private Point b;
+    private Point c;
 
     public Triangle() {
-        do {
-            A = new Point();
-            B = new Point();
-            C = new Point();
-        } while (A.equals(B) || B.equals(C) || C.equals(A) ||
-                 A.equalsX(B) && A.equalsX(C) || A.equalsY(B) && A.equalsY(C));
-        a = A.distance(B);
-        b = B.distance(C);
-        c = C.distance(A);
     }
 
-    public Triangle(Point A, Point B, Point C){
-        this.A = A;
-        this.B = B;
-        this.C = C;
-        a = A.distance(B);
-        b = B.distance(C);
-        c = C.distance(A);
+    public Triangle(Point a, Point b, Point c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     public float perimeter() {
-        float res = a + b + c;
+        float sideAB = a.distance(b);
+        float sideBC = b.distance(c);
+        float sideCA = c.distance(a);
+        float res = sideAB + sideBC + sideCA;
         return res;
     }
 
     public float square() {
-        float p = this.perimeter() / 2;
-        float res = (float) Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        float sideAB = a.distance(b);
+        float sideBC = b.distance(c);
+        float sideCA = c.distance(a);
+        float p = perimeter() / 2;
+        float res = (float) Math.sqrt(p * (p - sideAB) * (p - sideBC) * (p - sideCA));
         return res;
     }
 
+    public boolean equalsSide(float side1, float side2) {
+        if (Math.abs(side1 - side2) < EPSILON) {
+            return true;
+        }
+        return false;
+    }
+
     public byte type() {
-        if (equalsSideAB() && equalsSideBC()) {
+        float sideAB = a.distance(b);
+        float sideBC = b.distance(c);
+        float sideCA = c.distance(a);
+        if (equalsSide(sideAB, sideBC) && equalsSide(sideBC, sideCA)) {
             return 1; //"Равносторонний";
-        } else if (Math.abs((a * a) - ((b * b) + (c * c))) < EPSILON ||
-                Math.abs((b * b) - ((c * c) + (a * a))) < EPSILON ||
-                Math.abs((c * c) - ((a * a) + (b * b))) < EPSILON) {
+        } else if (Math.abs((sideAB * sideAB) - ((sideBC * sideBC) + (sideCA * sideCA))) < EPSILON ||
+                Math.abs((sideBC * sideBC) - ((sideCA * sideCA) + (sideAB * sideAB))) < EPSILON ||
+                Math.abs((sideCA * sideCA) - ((sideAB * sideAB) + (sideBC * sideBC))) < EPSILON) {
             return 2; //"Прямоугольный";
-        } else if (equalsSideAB() || equalsSideCA() || equalsSideBC()) {
+        } else if (equalsSide(sideAB, sideBC) || equalsSide(sideBC, sideCA) || equalsSide(sideCA, sideAB)) {
             return 3; //"Равнобедренный";
         } else {
             return 4; //"Произвольный";
@@ -58,28 +58,14 @@ public class Triangle {
 
     @Override
     public String toString() {
-        StringBuilder check = new StringBuilder();
-        check.append("Треугольник [A(");
-        check.append(A.getX());
-        check.append(", ");
-        check.append(A.getY());
-        check.append(") B(");
-        check.append(B.getX());
-        check.append(", ");
-        check.append(B.getY());
-        check.append(") C(");
-        check.append(C.getX());
-        check.append(", ");
-        check.append(C.getY());
-        check.append(")]");
-        return check.toString();
+        return "Треугольник [A" + a.toString() + " B" + b.toString() + " C" + c.toString() + "]";
     }
 
     public void getInfo(){
-        System.out.println(this.toString());
-        System.out.println("P: " + this.perimeter());
-        System.out.println("S: " + this.square());
-        switch (this.type()) {
+        System.out.println(toString());
+        System.out.println("P: " + perimeter());
+        System.out.println("S: " + square());
+        switch (type()) {
             case 1:
                 System.out.println("Тип: Равносторонний");
                 break;
@@ -93,27 +79,6 @@ public class Triangle {
                 System.out.println("Тип: Произвольный");
                 break;
         }
-    }
-
-    public boolean equalsSideAB() {
-        if (Math.abs(a - b) < EPSILON) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean equalsSideBC() {
-        if (Math.abs(b - c) < EPSILON) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean equalsSideCA() {
-        if (Math.abs(c - a) < EPSILON) {
-            return true;
-        }
-        return false;
     }
 }
 

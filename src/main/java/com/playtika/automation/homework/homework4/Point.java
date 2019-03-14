@@ -2,15 +2,12 @@ package com.playtika.automation.homework.homework4;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Point {
     private float x;
     private float y;
 
     public Point() {
-        x = new BigDecimal(Math.random(),new MathContext(3)).floatValue();
-        y = new BigDecimal(Math.random(),new MathContext(3)).floatValue();
     }
 
     public Point(float x, float y) {
@@ -19,7 +16,7 @@ public class Point {
     }
 
     public Point(float xy) {
-        this(xy, xy);
+        new Point(xy, xy);
     }
 
     public float distance(Point toPoint) {
@@ -27,14 +24,6 @@ public class Point {
         float resY = this.y - toPoint.y;
         float res = (float) Math.sqrt((resX * resX) + (resY * resY));
         return res;
-    }
-
-    public float getX(){
-        return x;
-    }
-
-    public float getY(){
-        return y;
     }
 
     public boolean equals(Object otherPoint) {
@@ -51,17 +40,16 @@ public class Point {
         return y == point.y;
     }
 
-    public boolean equalsX(Point otherPoint) {
-        if (x == otherPoint.x) {
-            return true;
-        }
-        return false;
+    public float getX(){
+        return x;
     }
 
-    public boolean equalsY(Point otherPoint) {
-        if (y == otherPoint.y) {
-            return true;
-        }
-        return false;
+    public float getY(){
+        return y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + getX() + ", " + getY() + ")";
     }
 }
