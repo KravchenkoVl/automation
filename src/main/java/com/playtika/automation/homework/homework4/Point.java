@@ -1,8 +1,5 @@
 package com.playtika.automation.homework.homework4;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-
 public class Point {
     private float x;
     private float y;
@@ -20,8 +17,8 @@ public class Point {
     }
 
     public float distance(Point toPoint) {
-        float resX = this.x - toPoint.x;
-        float resY = this.y - toPoint.y;
+        float resX = x - toPoint.x;
+        float resY = y - toPoint.y;
         float res = (float) Math.sqrt((resX * resX) + (resY * resY));
         return res;
     }

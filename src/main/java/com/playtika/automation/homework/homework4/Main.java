@@ -2,14 +2,14 @@ package com.playtika.automation.homework.homework4;
 
 import java.util.Scanner;
 
-import static com.playtika.automation.homework.homework4.TrianglesFactory.getRandomTriange;
+import static com.playtika.automation.homework.homework4.TrianglesFactory.getRandomTriangle;
 
 public class Main {
     public static void main(String[] args) {
         Triangle[] triangles = new Triangle[100_000];
         int i = 0;
         while (i < triangles.length) {
-            triangles[i] = getRandomTriange();
+            triangles[i] = getRandomTriangle();
             i++;
         }
 
