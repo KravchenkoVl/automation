@@ -3,7 +3,7 @@ package com.playtika.automation.homework.homework4;
 import static com.playtika.automation.homework.homework4.PointFactory.getRandomPoint;
 
 public class TrianglesFactory {
-    public static Triangle getRandomTriange() {
+    public static Triangle getRandomTriangle() {
         Point p1 = new Point();
         Point p2 = new Point();
         Point p3 = new Point();
