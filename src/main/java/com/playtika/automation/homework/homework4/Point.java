@@ -23,6 +23,7 @@ public class Point {
         return res;
     }
 
+    @Override
     public boolean equals(Object otherPoint) {
         if (otherPoint == null) {
             return false;
