@@ -1,55 +1,76 @@
 package com.playtika.automation.homework.homework4;
 
+import static com.playtika.automation.homework.homework4.TrianglesEnum.*;
+
 public class Triangle {
     public static final float EPSILON = 0.01f;
     private Point a;
     private Point b;
     private Point c;
+    private float sideAB;
+    private float sideBC;
+    private float sideCA;
 
     public Triangle(Point a, Point b, Point c){
         this.a = a;
         this.b = b;
         this.c = c;
+        sideAB = a.distance(b);
+        sideBC = b.distance(c);
+        sideCA = c.distance(a);
     }
 
     public float perimeter() {
-        float sideAB = a.distance(b);
-        float sideBC = b.distance(c);
-        float sideCA = c.distance(a);
         float res = sideAB + sideBC + sideCA;
         return res;
     }
 
     public float square() {
-        float sideAB = a.distance(b);
-        float sideBC = b.distance(c);
-        float sideCA = c.distance(a);
-        float p = perimeter() / 2;
+        float p = perimeter() / 2; //полупериметр
         float res = (float) Math.sqrt(p * (p - sideAB) * (p - sideBC) * (p - sideCA));
         return res;
     }
 
-    public boolean equalsSide(float side1, float side2) {
+    private boolean equalsSide(float side1, float side2) {
         if (Math.abs(side1 - side2) < EPSILON) {
             return true;
         }
         return false;
     }
 
-    public byte type() {
-        float sideAB = a.distance(b);
-        float sideBC = b.distance(c);
-        float sideCA = c.distance(a);
+    private boolean isEquilateral() {
         if (equalsSide(sideAB, sideBC) && equalsSide(sideBC, sideCA)) {
-            return 1; //"Равносторонний";
-        } else if (Math.abs((sideAB * sideAB) - ((sideBC * sideBC) + (sideCA * sideCA))) < EPSILON ||
+            return true;
+        } else {
+            return false;
+        }
+    }
+    private boolean isRectangular() {
+        if (Math.abs((sideAB * sideAB) - ((sideBC * sideBC) + (sideCA * sideCA))) < EPSILON ||
                 Math.abs((sideBC * sideBC) - ((sideCA * sideCA) + (sideAB * sideAB))) < EPSILON ||
                 Math.abs((sideCA * sideCA) - ((sideAB * sideAB) + (sideBC * sideBC))) < EPSILON) {
-            return 2; //"Прямоугольный";
-        } else if (equalsSide(sideAB, sideBC) || equalsSide(sideBC, sideCA) || equalsSide(sideCA, sideAB)) {
-            return 3; //"Равнобедренный";
+            return true;
         } else {
-            return 4; //"Произвольный";
+            return false;
+        }
+    }
+    private boolean isIsosceles() {
+        if (equalsSide(sideAB, sideBC) || equalsSide(sideBC, sideCA) || equalsSide(sideCA, sideAB)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public TrianglesEnum type() {
+        if (isEquilateral()) {
+            return Equilateral;
+        } else if (isRectangular()) {
+            return Rectangular;
+        } else if (isIsosceles()) {
+            return Isosceles;
+        } else {
+            return Arbitrary;
         }
     }
 
@@ -63,16 +84,16 @@ public class Triangle {
         System.out.println("P: " + perimeter());
         System.out.println("S: " + square());
         switch (type()) {
-            case 1:
+            case Equilateral:
                 System.out.println("Тип: Равносторонний");
                 break;
-            case 2:
+            case Rectangular:
                 System.out.println("Тип: Прямоугольный");
                 break;
-            case 3:
+            case Isosceles:
                 System.out.println("Тип: Равнобедренный");
                 break;
-            case 4:
+            case Arbitrary:
                 System.out.println("Тип: Произвольный");
                 break;
         }

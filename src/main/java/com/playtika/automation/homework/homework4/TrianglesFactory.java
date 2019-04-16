@@ -4,9 +4,9 @@ import static com.playtika.automation.homework.homework4.PointFactory.getRandomP
 
 public class TrianglesFactory {
     public static Triangle getRandomTriangle() {
-        Point p1 = new Point();
-        Point p2 = new Point();
-        Point p3 = new Point();
+        Point p1 = getRandomPoint();
+        Point p2 = getRandomPoint();
+        Point p3 = getRandomPoint();
         Triangle triangle = new Triangle(p1, p2, p3);
         while (triangle.square() == 0) {
             p1 = getRandomPoint();

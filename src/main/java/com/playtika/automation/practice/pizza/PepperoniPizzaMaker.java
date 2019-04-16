@@ -11,7 +11,7 @@ public class PepperoniPizzaMaker extends AbstractPizzaMaker {
     protected void bakePizza() {
         System.out.println("Выпекаем...");
         try {
-            Thread.sleep(15_000);
+            Thread.sleep(4_000);
         }
         catch (InterruptedException e){
             System.out.println("Прервано");

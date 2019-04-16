@@ -2,6 +2,7 @@ package com.playtika.automation.homework.homework4;
 
 import java.util.Scanner;
 
+import static com.playtika.automation.homework.homework4.TrianglesEnum.*;
 import static com.playtika.automation.homework.homework4.TrianglesFactory.getRandomTriangle;
 
 public class Main {
@@ -25,6 +26,22 @@ public class Main {
             n = console.nextByte();
         }
 
+        TrianglesEnum m = null;
+        switch (n){
+            case 1:
+                m = Equilateral;
+                break;
+            case 2:
+                m = Rectangular;
+                break;
+            case 3:
+                m = Isosceles;
+                break;
+            case 4:
+                m = Arbitrary;
+                break;
+        }
+
         int type1 = 0;
         int type2 = 0;
         int type3 = 0;
@@ -32,20 +49,20 @@ public class Main {
         boolean flag = false;
         for (int j = 0; j < triangles.length; j++) {
             switch (triangles[j].type()) {
-                case 1:
+                case Equilateral:
                     type1++;   // Равносторонний
                     break;
-                case 2:
+                case Rectangular:
                     type2++;   // Прямоугольный
                     break;
-                case 3:
+                case Isosceles:
                     type3++;   // Равнобедренный
                     break;
-                case 4:
+                case Arbitrary:
                     type4++;   // Произвольный
                     break;
             }
-            if (triangles[j].type() == n) {
+            if (triangles[j].type() == m) {
                 if (flag == false) {
                     System.out.println("Индекс: " + j);
                     triangles[j].getInfo();

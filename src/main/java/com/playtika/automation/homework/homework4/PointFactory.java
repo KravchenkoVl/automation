@@ -2,8 +2,8 @@ package com.playtika.automation.homework.homework4;
 
 public class PointFactory {
     public static Point getRandomPoint() {
-        float x = (float) (-5 + Math.random() * 10);
-        float y = (float) (-5 + Math.random() * 10);
+        float x = (float) Math.random() * 10 - 5;
+        float y = (float) Math.random() * 10 - 5;
         return new Point(x, y);
     }
 }

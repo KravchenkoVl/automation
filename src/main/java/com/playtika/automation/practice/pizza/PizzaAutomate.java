@@ -15,7 +15,6 @@ public class PizzaAutomate {
 
     public static void main(String[] args) {
         PizzaAutomate check = new PizzaAutomate(new UkrainePizza());
-        String pizza = check.getPizza(Button.BUTTON_1);
-        System.out.println(pizza);
+        System.out.println(check.getPizza(Button.BUTTON_1));
     }
 }
