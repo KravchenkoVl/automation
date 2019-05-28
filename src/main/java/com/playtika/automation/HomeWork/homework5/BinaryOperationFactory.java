@@ -17,7 +17,7 @@ public class BinaryOperationFactory {
                 return new BaseLog();
             case "sqrt":
                 return new RootInDegree();
-            default:return null;
+            default:throw new IllegalArgumentException("Incorrect Operation");
         }
     }
 }

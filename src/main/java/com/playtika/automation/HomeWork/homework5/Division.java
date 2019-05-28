@@ -4,6 +4,9 @@ public class Division implements BinaryOperation {
 
     @Override
     public double resultFor(double left, double right) {
-        return left / right;
+        if (right != 0) {
+            return left / right;
+        }
+        throw new ArithmeticException("Division by zero");
     }
 }
