@@ -19,11 +19,8 @@ public class Calculator {
         Scanner console = new Scanner(System.in);
         Calculator calculator = new Calculator();
         for (int i = 0; i <= 4; i++) {
+            System.out.print("Введите пример по типу \"Значение_1 Оператор Значение_2\": ");
             check = console.nextLine();
-            while (!(new ExpressionChecker().checkExpression(check))) {
-                System.out.print("Введите пример по типу  \"Значение_1 Оператор Значение_2\": ");
-                check = console.nextLine();
-            }
             System.out.printf("Результат: %s\n\n",calculator.calculate(check));
             if (i < 4) {
                 System.out.print("Продолжим: ");

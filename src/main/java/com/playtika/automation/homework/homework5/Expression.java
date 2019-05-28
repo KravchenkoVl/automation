@@ -10,6 +10,9 @@ public class Expression {
 
     public Expression(String string) {
         String[] check = Parser.parse(string);
+        if (check.length != 3) {
+            throw new IllegalArgumentException("Incorrect expression");
+        }
         val1 = Double.parseDouble(check[0]);
         operator = check[1];
         val2 = Double.parseDouble(check[2]);
