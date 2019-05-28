@@ -23,7 +23,7 @@ public class Calculator {
             check = console.nextLine();
             System.out.printf("Результат: %s\n\n",calculator.calculate(check));
             if (i < 4) {
-                System.out.print("Продолжим: ");
+                System.out.printf("Продолжим: \n");
             }
         }
     }
